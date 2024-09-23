@@ -18,7 +18,7 @@ const App: React.FC = () => {
   // const weather_api = '';
 
 
-  const [dateTime, setDateTime] = useState<object>({
+  const [dateTime, setDateTime] = useState<any>({
     date: '',
     time: "",
     city: "",
@@ -99,11 +99,11 @@ const App: React.FC = () => {
       const city = data.results[0].components.city ||
         data.results[0].components.town || data.results[0].components.state_district || data.results[0].formatted || 'Unknown location';
       const createdHttp = data.timestamp.created_http;
-      const createdUnix = data.timestamp.created_unix;
+      // const createdUnix = data.timestamp.created_unix;
 
       // Using created_http
       const dateFromHttp = new Date(createdHttp);
-      const dateStringHttp = dateFromHttp.toLocaleDateString(); // Extract date
+      // const dateStringHttp = dateFromHttp.toLocaleDateString(); // Extract date
       const dayHttp = dateFromHttp.toLocaleDateString('en-US', { weekday: 'long' });
       const dateHttp = dateFromHttp.toLocaleDateString('en-US', { day: '2-digit', month: 'short' });
       const timeStringHttp = dateFromHttp.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }); // Extract time
